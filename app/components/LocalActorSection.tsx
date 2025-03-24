@@ -9,13 +9,13 @@ export function LocalActorSection() {
 
 	return (
 		<section className="py-24 relative overflow-hidden">
-			{/* Animated abstract background */}
-			<div className="absolute inset-0 -z-10">
+			{/* Animated abstract background - more subtle */}
+			<div className="absolute inset-0 z-0">
 				<motion.div
-					className="absolute inset-0 opacity-[0.15]"
+					className="absolute inset-0 opacity-30"
 					initial={{ opacity: 0 }}
-					animate={{ opacity: 0.15 }}
-					transition={{ duration: 1 }}
+					animate={{ opacity: 0.3 }}
+					transition={{ duration: 1.5 }}
 				>
 					<svg
 						width="100%"
@@ -28,30 +28,30 @@ export function LocalActorSection() {
 						<defs>
 							<pattern
 								id="grid"
-								width="8"
-								height="8"
+								width="12"
+								height="12"
 								patternUnits="userSpaceOnUse"
 							>
 								<path
-									d="M 8 0 L 0 0 0 8"
+									d="M 12 0 L 0 0 0 12"
 									fill="none"
-									stroke="#3B82F6"
-									strokeWidth="0.8"
+									stroke="#93C5FD"
+									strokeWidth="0.7"
 								/>
 							</pattern>
 							<pattern
 								id="circles"
-								width="30"
-								height="30"
+								width="40"
+								height="40"
 								patternUnits="userSpaceOnUse"
 							>
 								<circle
-									cx="15"
-									cy="15"
-									r="5"
+									cx="20"
+									cy="20"
+									r="8"
 									fill="none"
-									stroke="#8B5CF6"
-									strokeWidth="0.8"
+									stroke="#C4B5FD"
+									strokeWidth="0.7"
 								/>
 							</pattern>
 						</defs>
@@ -60,12 +60,12 @@ export function LocalActorSection() {
 					</svg>
 				</motion.div>
 
-				{/* Animated floating elements */}
+				{/* Animated floating elements with subtle animation */}
 				<div className="absolute inset-0">
-					{Array.from({ length: 10 }).map((_, index) => {
+					{Array.from({ length: 5 }).map((_, index) => {
 						// Generate random positions and sizes
-						const width = Math.random() * 200 + 100;
-						const height = Math.random() * 200 + 100;
+						const width = Math.random() * 250 + 150;
+						const height = Math.random() * 250 + 150;
 						const posX = `${Math.random() * 100 - 50}%`;
 						const posY = `${Math.random() * 100 - 50}%`;
 						const targetX = `${Math.random() * 100 - 50}%`;
@@ -77,30 +77,83 @@ export function LocalActorSection() {
 						return (
 							<motion.div
 								key={uniqueId}
-								className="absolute rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-20"
+								className="absolute rounded-full bg-gradient-to-r from-blue-200 to-purple-200 opacity-20"
 								style={{
 									width,
 									height,
 									x: posX,
 									y: posY,
+									filter: "blur(80px)",
 								}}
 								animate={{
 									x: [posX, targetX],
 									y: [posY, targetY],
+									scale: [1, 1.1, 0.95, 1.05, 1],
 								}}
 								transition={{
-									duration: Math.random() * 60 + 60,
-									ease: "linear",
-									repeat: Number.POSITIVE_INFINITY,
-									repeatType: "reverse",
+									x: {
+										duration: Math.random() * 60 + 80,
+										ease: "easeInOut",
+										repeat: Number.POSITIVE_INFINITY,
+										repeatType: "reverse",
+									},
+									y: {
+										duration: Math.random() * 60 + 80,
+										ease: "easeInOut",
+										repeat: Number.POSITIVE_INFINITY,
+										repeatType: "reverse",
+										delay: Math.random() * 5,
+									},
+									scale: {
+										duration: Math.random() * 20 + 20,
+										ease: "easeInOut",
+										repeat: Number.POSITIVE_INFINITY,
+										repeatType: "reverse",
+									},
 								}}
 							/>
 						);
 					})}
 				</div>
 
-				{/* Gradient overlay */}
-				<div className="absolute inset-0 bg-gradient-to-b from-gray-50/80 to-white/90" />
+				{/* Subtle gradient overlay */}
+				<div className="absolute inset-0 bg-gradient-to-b from-gray-50/70 to-white/80" />
+			</div>
+
+			{/* Pulsing dots animation */}
+			<div className="absolute inset-0 z-0 opacity-10">
+				<div className="relative w-full h-full">
+					{Array.from({ length: 30 }).map((_, index) => {
+						const posX = Math.random() * 100;
+						const posY = Math.random() * 100;
+						const size = Math.random() * 4 + 2;
+						const uniqueId = `${baseId}-dot-${index}`;
+						const delay = Math.random() * 5;
+
+						return (
+							<motion.div
+								key={uniqueId}
+								className="absolute rounded-full bg-blue-500"
+								style={{
+									left: `${posX}%`,
+									top: `${posY}%`,
+									width: size,
+									height: size,
+								}}
+								animate={{
+									opacity: [0.1, 0.5, 0.1],
+									scale: [1, 1.5, 1],
+								}}
+								transition={{
+									duration: Math.random() * 3 + 2,
+									ease: "easeInOut",
+									repeat: Number.POSITIVE_INFINITY,
+									delay,
+								}}
+							/>
+						);
+					})}
+				</div>
 			</div>
 
 			<div className="container mx-auto px-4 relative z-10">
@@ -126,7 +179,7 @@ export function LocalActorSection() {
 					viewport={{ once: true }}
 					className="grid md:grid-cols-3 gap-8 mb-16"
 				>
-					<div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+					<div className="bg-white/80 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
 						<div className="flex items-center mb-6">
 							<div className="bg-blue-100 p-3 rounded-full mr-4">
 								<MapPin className="w-6 h-6 text-blue-600" />
@@ -139,7 +192,7 @@ export function LocalActorSection() {
 						</p>
 					</div>
 
-					<div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+					<div className="bg-white/80 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
 						<div className="flex items-center mb-6">
 							<div className="bg-green-100 p-3 rounded-full mr-4">
 								<Clock className="w-6 h-6 text-green-600" />
@@ -152,7 +205,7 @@ export function LocalActorSection() {
 						</p>
 					</div>
 
-					<div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+					<div className="bg-white/80 backdrop-filter backdrop-blur-sm p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
 						<div className="flex items-center mb-6">
 							<div className="bg-purple-100 p-3 rounded-full mr-4">
 								<Shield className="w-6 h-6 text-purple-600" />
@@ -171,7 +224,7 @@ export function LocalActorSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.4, duration: 0.5 }}
 					viewport={{ once: true }}
-					className="max-w-3xl mx-auto bg-white bg-opacity-90 backdrop-blur-sm p-8 rounded-lg border border-blue-100 text-center shadow-md"
+					className="max-w-3xl mx-auto bg-white/80 backdrop-filter backdrop-blur-sm p-8 rounded-lg border border-blue-100 text-center shadow-md"
 				>
 					<h3 className="text-2xl font-semibold mb-4 text-gray-800">
 						Votre partenaire idéal pour votre transition numérique
