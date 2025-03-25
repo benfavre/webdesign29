@@ -19,12 +19,12 @@ export function CTASection() {
 						>
 							Commencer
 						</Link>
-						<Link
+						{/* <Link
 							href="/portfolio"
 							className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
 						>
 							Voir Nos Réalisations
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 			</div>
