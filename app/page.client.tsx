@@ -9,6 +9,7 @@ import { TeamSection } from "@/app/components/TeamSection";
 import { TestimonialsSection } from "@/app/components/TestimonialsSection";
 import { ClientsSection } from "@/app/components/ClientsSection";
 import { ContactSection } from "@/app/components/ContactSection";
+import { CTASection } from "@/app/components/CTASection";
 import { Footer } from "@/app/components/Footer";
 import { ProjectsSectionSkeleton } from "@/app/components/skeletons/ProjectsSectionSkeleton";
 import { TestimonialsSectionSkeleton } from "@/app/components/skeletons/TestimonialsSectionSkeleton";
@@ -18,6 +19,7 @@ import {
 	type NotificationCenterRef,
 } from "@/app/components/NotificationCenter";
 import { useCallback, useRef } from "react";
+import type { Project, Testimonial } from "@/app/types";
 
 export default function Home({
 	projects,
@@ -46,6 +48,7 @@ export default function Home({
 				<TestimonialsSection testimonials={testimonials} />
 			</Suspense>
 			<ClientsSection />
+			<CTASection />
 			<Footer />
 		</div>
 	);
