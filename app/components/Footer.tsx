@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import {
 	MapPin,
 	Mail,
@@ -15,13 +16,15 @@ export function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
 					<div>
 						<div className="flex items-center mb-6">
-							<Image
-								src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wd29-logo-2-tNv0T73M6BT4drA5KMOyZnne55624T.svg"
-								alt="Webdesign29 Logo"
-								width={100}
-								height={35}
-								className="mr-2"
-							/>
+							<NextLink href="/">
+								<Image
+									src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wd29-logo-2-tNv0T73M6BT4drA5KMOyZnne55624T.svg"
+									alt="Webdesign29 Logo"
+									width={100}
+									height={35}
+									className="mr-2"
+								/>
+							</NextLink>
 						</div>
 						<p className="text-gray-400 mb-6">
 							Agence de création web à Brest, spécialisée dans le développement
@@ -32,44 +35,44 @@ export function Footer() {
 						<h3 className="text-lg font-bold mb-6">Liens Rapides</h3>
 						<ul className="space-y-3">
 							<li>
-								<a
-									href="#accueil"
+								<NextLink
+									href="/#accueil"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Accueil
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#services"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Services
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#projets"
+								<NextLink
+									href="/#projets"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Projets
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#equipe"
+								<NextLink
+									href="/#equipe"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Équipe
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#contact"
+								<NextLink
+									href="/#contact"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Contact
-								</a>
+								</NextLink>
 							</li>
 						</ul>
 					</div>
@@ -77,44 +80,44 @@ export function Footer() {
 						<h3 className="text-lg font-bold mb-6">Services</h3>
 						<ul className="space-y-3">
 							<li>
-								<a
-									href="#"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Développement Web
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Design Responsive
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Référencement SEO
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Stratégie Digitale
-								</a>
+								</NextLink>
 							</li>
 							<li>
-								<a
-									href="#"
+								<NextLink
+									href="/#services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Identité Visuelle
-								</a>
+								</NextLink>
 							</li>
 						</ul>
 					</div>
@@ -157,25 +160,33 @@ export function Footer() {
 					</p>
 					<div className="flex space-x-6">
 						<a
-							href="#"
+							href="https://facebook.com/webdesign29"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors"
 						>
 							<Facebook className="h-5 w-5" />
 						</a>
 						<a
-							href="#"
+							href="https://twitter.com/webdesign29"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors"
 						>
 							<Twitter className="h-5 w-5" />
 						</a>
 						<a
-							href="#"
+							href="https://instagram.com/webdesign29"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors"
 						>
 							<Instagram className="h-5 w-5" />
 						</a>
 						<a
-							href="#"
+							href="https://linkedin.com/company/webdesign29"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors"
 						>
 							<svg

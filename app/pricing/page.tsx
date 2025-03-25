@@ -154,7 +154,7 @@ export default function PricingPage() {
 										))}
 									</ul>
 									<Button className="w-full bg-primary hover:bg-primary/90">
-										Demander un devis
+										<Link href="/devis">Demander un devis</Link>
 									</Button>
 								</motion.div>
 							))}
@@ -206,7 +206,7 @@ export default function PricingPage() {
 								size="lg"
 								className="bg-accent text-primary hover:bg-accent/90"
 							>
-								Contactez-nous
+								<Link href="/devis">Contactez-nous</Link>
 							</Button>
 						</motion.div>
 					</div>
