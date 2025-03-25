@@ -36,7 +36,7 @@ export function Footer() {
 						<ul className="space-y-3">
 							<li>
 								<NextLink
-									href="/#accueil"
+									href="/"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Accueil
@@ -44,7 +44,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Services
@@ -52,7 +52,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#projets"
+									href="/projects"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Projets
@@ -60,18 +60,26 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#equipe"
+									href="/about"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
-									Équipe
+									À Propos
 								</NextLink>
 							</li>
 							<li>
 								<NextLink
-									href="/#contact"
+									href="/contact"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Contact
+								</NextLink>
+							</li>
+							<li>
+								<NextLink
+									href="/pricing"
+									className="text-gray-400 hover:text-white transition-colors"
+								>
+									Tarifs
 								</NextLink>
 							</li>
 						</ul>
@@ -81,7 +89,7 @@ export function Footer() {
 						<ul className="space-y-3">
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Développement Web
@@ -89,7 +97,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Design Responsive
@@ -97,7 +105,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Référencement SEO
@@ -105,7 +113,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Stratégie Digitale
@@ -113,7 +121,7 @@ export function Footer() {
 							</li>
 							<li>
 								<NextLink
-									href="/#services"
+									href="/services"
 									className="text-gray-400 hover:text-white transition-colors"
 								>
 									Identité Visuelle

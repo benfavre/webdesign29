@@ -22,12 +22,12 @@ export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const menuItems = [
-		{ name: "Accueil", target: "accueil" },
-		{ name: "Services", target: "services" },
-		{ name: "Projets", target: "projets" },
-		{ name: "Équipe", target: "equipe" },
-		{ name: "Témoignages", target: "temoignages" },
-		{ name: "Contact", target: "contact" },
+		{ name: "Accueil", path: "/", target: "accueil" },
+		{ name: "Services", path: "/services", target: "services" },
+		{ name: "Projets", path: "/projects", target: "projets" },
+		{ name: "À Propos", path: "/about", target: "equipe" },
+		{ name: "Contact", path: "/contact", target: "contact" },
+		{ name: "Tarifs", path: "/pricing", target: null },
 	];
 
 	const handleLinkClick = () => {
@@ -66,7 +66,7 @@ export function Header() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 0.1 * index }}
 						>
-							{isHomePage ? (
+							{isHomePage && item.target ? (
 								<Link
 									to={item.target}
 									spy={true}
@@ -79,7 +79,7 @@ export function Header() {
 								</Link>
 							) : (
 								<NextLink
-									href={`/#${item.target}`}
+									href={item.path}
 									className="text-white hover:text-accent transition-colors cursor-pointer"
 								>
 									{item.name}
@@ -87,18 +87,6 @@ export function Header() {
 							)}
 						</motion.div>
 					))}
-					<motion.div
-						initial={{ opacity: 0, y: -20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ delay: 0.1 * menuItems.length }}
-					>
-						<NextLink
-							href="/pricing"
-							className="text-white hover:text-accent transition-colors cursor-pointer"
-						>
-							Tarifs
-						</NextLink>
-					</motion.div>
 				</nav>
 				<motion.div
 					initial={{ opacity: 0, x: 20 }}
@@ -137,7 +125,7 @@ export function Header() {
 							<nav className="mt-8 flex flex-col space-y-4">
 								{menuItems.map((item) => (
 									<div key={item.name}>
-										{isHomePage ? (
+										{isHomePage && item.target ? (
 											<Link
 												to={item.target}
 												spy={true}
@@ -151,7 +139,7 @@ export function Header() {
 											</Link>
 										) : (
 											<NextLink
-												href={`/#${item.target}`}
+												href={item.path}
 												className="block text-white hover:text-accent transition-colors cursor-pointer text-lg"
 												onClick={handleLinkClick}
 											>
@@ -160,13 +148,6 @@ export function Header() {
 										)}
 									</div>
 								))}
-								<NextLink
-									href="/pricing"
-									className="block text-white hover:text-accent transition-colors cursor-pointer text-lg"
-									onClick={handleLinkClick}
-								>
-									Tarifs
-								</NextLink>
 								<NextLink
 									href="/devis"
 									className="block text-white hover:text-accent transition-colors cursor-pointer text-lg"

@@ -46,7 +46,6 @@ export default function Home({
 				<TestimonialsSection testimonials={testimonials} />
 			</Suspense>
 			<ClientsSection />
-			<ContactSection addNotification={addNotification} />
 			<Footer />
 		</div>
 	);
